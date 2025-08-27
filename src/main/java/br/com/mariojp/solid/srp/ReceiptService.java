@@ -2,7 +2,7 @@ package br.com.mariojp.solid.srp;
 
 public class ReceiptService {
 	public String generate(Order order) {
-		double subtotal = order.getItems().stream().mapToDouble(i -> i.getUnitPrice() * i.getQuantity()).sum();
+		
 		double tax = subtotal * 0.10; //Taxa 10 fixa :(
 		double total = subtotal + tax;
 		StringBuilder sb = new StringBuilder(); //Formatando o Recibo
@@ -16,4 +16,10 @@ public class ReceiptService {
 		sb.append("Total: ").append(total).append("\n");
 		return sb.toString();
 	}
+	
+	public double getSubtotal(Order order) {
+		double subtotal = order.getItems().stream().mapToDouble(i -> i.getUnitPrice() * i.getQuantity()).sum();
+		return subtotal;
+	}
+
 }

@@ -1,10 +1,8 @@
 package br.com.mariojp.solid.srp;
 
 public class TaxCalculator {
-	public double calcularTaxa(double subtotal) {
-		String taxRateString = System.getProperty("tax.rate");
-		double taxRate = Double.parseDouble(taxRateString);
-		double tax = subtotal * taxRate; 
-		return tax;
+	public static double calcularTaxa(double subtotal) {
+		double tax = Double.parseDouble(System.getProperty("tax.rate"));
+		return subtotal * tax;
 	}
 }

@@ -2,7 +2,7 @@ package br.com.mariojp.solid.srp;
 
 public class ReceiptFormatter {
 	
-	public String generate(Order order, String subtotal, String tax, String total ) {
+	public static String formatador(Order order, double subtotal, double tax, double total ) {
 	StringBuilder sb = new StringBuilder(); //Formatando o Recibo
 	sb.append("=== RECIBO ===\n");
 	for (var i : order.getItems()) {
